@@ -1,4 +1,21 @@
 import { useState } from "react";
+import Masonry from "react-masonry-css";
+import Prabhupada from "../assets/January_20.jpg";
+// Import images from /src/assets/life
+const lifeImages = [
+  "img0.jpg",
+  "img1.jpg",
+  "img2.jpg",
+  "img3.jpg",
+  "img4.jpg",
+  "img5.jpg",
+  "img6.jpg",
+  "img7.jpg",
+  "img8.jpg",
+  "img11.jpg",
+  "img9.jpg",
+  "img10.jpg",
+].map((img) => `/src/assets/life/${img}`);
 
 export default function Home() {
 
@@ -10,7 +27,7 @@ export default function Home() {
   return (
     <div>
       <div className="relative overflow-hidden group">
-        <img src="/radha_madhava.jpg" alt="" className="transition-transform duration-[15000ms] ease-in-out group-hover:scale-110" />
+        <img src="/src/assets/youth.jpg" alt="" className="transition-transform duration-[15000ms] ease-in-out group-hover:scale-110" />
 
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-[radial-gradient(circle,_transparent_40%,_rgba(0,0,0,0.7)_100%)]" />
 
@@ -55,15 +72,43 @@ export default function Home() {
       </div>
       {/* Right: Image */}
       <div className="flex-1 min-w-[250px] flex justify-center items-center py-8">
-        <img src="/home.jpg" alt="Who we are" className="max-w-xs md:max-w-sm lg:max-w-md w-full rounded-lg shadow-lg" />
+        <img src="/home.jpg" alt="Who we are" className="max-w-sm md:max-w-md lg:max-w-2xl w-full rounded-lg shadow-lg" />
       </div>
     </div>
 
-        <div className="items-center text-center py-12 px-4">
-          <div className="font-['Poppins'] text-sm tracking-wide my-4">(Live/Upcoming Events)</div>
-          <h1 className="font-semibold text-5xl group-hover:text-[#BD8E2A]">The "Pulse"</h1>
-        </div>
+    <div
+      className="my-12 mx-15 rounded-[25rem] items-center py-12 px-4 justify-center flex flex-col relative overflow-hidden"
+      style={{
+        background: "radial-gradient(circle, #fefcbf 60%, #fde68a 80%, #f59e42 100%)"
+      }}
+    >
+      <div className="font-semibold text-5xl group-hover:text-[#BD8E2A] py-7 text-[#BD8E2A] z-10">Prabhupada Daily Quote</div>
+      <img src={Prabhupada} alt="" className="h-135 z-10"/>
+    </div>
 
+        <div className="items-center text-center py-12 px-4">
+          <div className="font-['Poppins'] text-sm tracking-wide my-4">(Photo/Video Gallery)</div>
+          <h1 className="font-semibold text-5xl group-hover:text-[#BD8E2A]">Life at IYF Mayapur</h1>
+        
+        {/* Masonry Image Gallery */}
+        <div className="max-w-6xl mx-auto px-2 md:px-8 py-8">
+          <Masonry
+            breakpointCols={{ default: 3, 900: 2, 600: 1 }}
+            className="flex w-auto gap-4"
+            columnClassName="masonry-column flex flex-col gap-4"
+          >
+            {lifeImages.map((src, idx) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Life at IYF Mayapur ${idx + 1}`}
+                className="rounded-lg shadow-md w-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            ))}
+          </Masonry>
+        </div>
+            </div>
     </div>
   )
 }
