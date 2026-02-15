@@ -15,7 +15,7 @@ const lifeImages = [
   "img11.jpg",
   "img9.jpg",
   "img10.jpg",
-].map((img) => `/src/assets/life/${img}`);
+].map((img) => `/life/${img}`);
 
 export default function Home() {
 
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div>
       <div className="relative overflow-hidden group">
-        <img src="/src/assets/youth.jpg" alt="" className="transition-transform duration-[15000ms] ease-in-out group-hover:scale-110" />
+        <img src="/youth.jpg" alt="" className="transition-transform duration-[15000ms] ease-in-out group-hover:scale-110" />
 
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-[radial-gradient(circle,_transparent_40%,_rgba(0,0,0,0.7)_100%)]" />
 
