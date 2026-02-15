@@ -76,10 +76,13 @@ const scrollToFeatured= ()=>{
 
         <div id='featured-courses' style={{textAlign:'center', margin:'5rem'}}>
 
-            <div style={headingStyle2}>
+            {/* <div style={headingStyle2}>
                 Our Featured Courses
-            </div>
+            </div> */}
             <div style={{display:'flex', justifyContent:'center', gap:'1.5rem', flexWrap:'wrap', margin:'2rem auto'}}>
+            <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course123' />
+            <CourseCard imageUrl={mantra} title='Meditation for Inner Peace' subtitle='Learn simple yet profound meditation technique to calm the mind and connect with your inner self.' level='All levels' courseId='course124'/>
+            <CourseCard  imageUrl={kirtan} title='The Art of Kirtan' subtitle='Discover the power of mantra meditation through call-and-response chanting with musical instruments.' level='Beginner' courseId='course125'/>
             <CourseCard imageUrl={gita} title='Introduction to Bhagavad Gita' subtitle='Explore the timeless wisdom of the Bhagavad Gita and its practical application' level='Beginner' courseId='course123' />
             <CourseCard imageUrl={mantra} title='Meditation for Inner Peace' subtitle='Learn simple yet profound meditation technique to calm the mind and connect with your inner self.' level='All levels' courseId='course124'/>
             <CourseCard  imageUrl={kirtan} title='The Art of Kirtan' subtitle='Discover the power of mantra meditation through call-and-response chanting with musical instruments.' level='Beginner' courseId='course125'/>

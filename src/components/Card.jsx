@@ -60,11 +60,14 @@ export function CourseCard({ title, subtitle, imageUrl, level, courseId, price }
     padding:'0',
     boxShadow:'0 2px 5px rgba(0,0,0,0.1)',
     margin:'0',
-    overflow:'hidden'
+    overflow:'hidden',
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'space-between'
 }}>
     <img src={imageUrl} alt="image" style={imageStyle} />
     <div>
-    <div style={tagStyle}>{level}</div>
+    {/* <div style={tagStyle}>{level}</div> */}
     </div>
     <div style={headingStyle}>{title}</div>
 
@@ -72,7 +75,7 @@ export function CourseCard({ title, subtitle, imageUrl, level, courseId, price }
         padding:'0.5rem'
     }}>
 
-    <p style={subtextStyle}>{subtitle}</p>
+    {/* <p style={subtextStyle}>{subtitle}</p> */}
     <Link to={`/course/${courseId}`} style={{textDecoration:'none'}}>
         <button style={buttonStyle}>View Course</button>
     </Link>

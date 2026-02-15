@@ -26,8 +26,8 @@ export default function Navbar() {
                 className='hover:text-blue-600 transition-colors font-bold'>Store</Link>
             </li>
             <li>
-                <Link to='/about'
-                className='hover:text-blue-600 transition-colors font-bold'>About Us</Link>
+                <Link to='/sp'
+                className='hover:text-blue-600 transition-colors font-bold'>Srila Prabhupada</Link>
             </li>
         </ul>
       </div>
